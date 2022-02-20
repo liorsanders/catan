@@ -5,13 +5,8 @@
 #include "Resource.h"
 #include "SpecialCard.h"
 #include "Piece.h"
+#include "Color.h"
 
-typedef enum {
-    red,
-    blue,
-    orange,
-    white
-}Color;
 
 typedef struct {
     Color color;

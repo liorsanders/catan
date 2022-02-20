@@ -5,6 +5,7 @@
 #include "SpecialCard.h"
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int main() {
     Resource* resources = (Resource*)malloc(sizeof(Resource)*3);
