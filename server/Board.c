@@ -9,6 +9,11 @@
 Board* createBoard() {
 
     Board* board = (Board*)malloc(sizeof(Board));
+    board->sheep_count = DEFAULT_RESOURCE_COUNT;
+    board->brick_count = DEFAULT_RESOURCE_COUNT;
+    board->wood_count = DEFAULT_RESOURCE_COUNT;
+    board->ore_count = DEFAULT_RESOURCE_COUNT;
+    board->wheat_count = DEFAULT_RESOURCE_COUNT;
     //14 knights, 5 victory points, 2 road building, 2 year of plenty, 2 monopoly
     for(int i=0;i<14;i++) board->devCards[i] = knight;
     for(int i=14;i<19;i++) board->devCards[i] = victory_point;

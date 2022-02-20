@@ -10,10 +10,15 @@
 #define NUM_OF_RESOURCES 95
 #define NUM_OF_NUMBERS 18
 #define NUM_OF_DEV_CARDS 25
+#define DEFAULT_RESOURCE_COUNT 20
 
 typedef struct {
     Hexagon* hexes[NUM_OF_HEXES]; //from top to bottom
-    Resource resources[NUM_OF_RESOURCES];
+    unsigned int wheat_count;
+    unsigned int wood_count;
+    unsigned int ore_count;
+    unsigned int sheep_count;
+    unsigned int brick_count;
     DevelopmentCard devCards[NUM_OF_DEV_CARDS];
 }Board;
 
