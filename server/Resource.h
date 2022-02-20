@@ -1,3 +1,6 @@
+#ifndef RESOURCE_H
+#define RESOURCE_H
+
 typedef enum {
     wheat,
     ore,
@@ -6,3 +9,5 @@ typedef enum {
     sheep,
     desert
 }Resource;
+
+#endif
