@@ -4,25 +4,27 @@
 #include "Resource.h"
 #include "SpecialCard.h"
 #include "Hexagon.h"
-
+#include "Board.h"
+#include "Helper.h"
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-
+#include <string.h>
 
 int main() {
     srand(time(NULL));
-    Placement place;
-    place.board_placement = settlement_piece;
-    place.color = blue;
-    Hexagon* hex = createHexagon(wood, 6);
-    printf("created\nadding...\n");
-    addPlacement(hex, 0, place);
-    place.board_placement = city_piece;
-    addPlacement(hex, 0, place);
-    printf("done\n");
-    free(hex);
+    Board* board = createBoard();
+    int numOfPlayers;
+    while(true) {
+        numOfPlayers = getNumber("enter number of players (between 2 to 4): ");
+        if(numOfPlayers >= 2 && numOfPlayers <= 4) break;
+    }
+    Player** players = (Player**)malloc(sizeof(Player*)*numOfPlayers);
 
+
+    free(players);
+    destructBoard(board);
+    free(board);
     return 0;
 }

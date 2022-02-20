@@ -22,7 +22,7 @@ Board* createBoard() {
     for(int i=23;i<25;i++) board->devCards[i] = monopoly;
     shuffleCards(board->devCards);
 
-    //shuffle hexes: 3 brick, 3 ore, 4 wheat, 4 wood, 4 sheep
+    //3 brick, 3 ore, 4 wheat, 4 wood, 4 sheep 1 desert
     for(int i=0;i<3;i++) board->hexes[i] = createHexagon(brick, 0);
     for(int i=3;i<6;i++) board->hexes[i] = createHexagon(ore, 0);
     for(int i=6;i<10;i++) board->hexes[i] = createHexagon(wheat, 0);
