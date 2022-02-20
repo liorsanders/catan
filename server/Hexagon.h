@@ -3,6 +3,7 @@
 
 #include "Resource.h"
 #include "Piece.h"
+#include <stdbool.h>
 
 typedef enum {
     wood_port,
@@ -16,18 +17,29 @@ typedef enum {
 
 typedef struct {
     Port port;
-    Placement placement;
+    Placement* placement;
 }HexSide;
 
 typedef struct {
-    Placement placement;
+    Placement* placement;
 }HexCorner;
 
 //order (sides): top, top right, bottom right, bottom, bottom left, top left
 //order (corners): top right, right, bottom right, bottom left, left, top left
 typedef struct {
-    HexCorner corners[6];
-    HexSide sides[6];
+    HexCorner* corners[6];
+    HexSide* sides[6];
+    Resource resource;
+    unsigned int number;
+    bool isRobbed;
 }Hexagon;
+
+Hexagon* createHexagon(Resource resource, unsigned int number); 
+void addPlacement(Hexagon* hex, unsigned int cornerIndex, Placement placement); //to corner
+void addRoad(Hexagon* hex, unsigned int sideIndex, Color color); // to side
+void placeRobber(Hexagon* hex);
+void removeRobber(Hexagon* hex);
+void destructHexagon(Hexagon* hex);
+
 
 #endif 
