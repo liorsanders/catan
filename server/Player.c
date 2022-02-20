@@ -1,5 +1,8 @@
 #include "Player.h"
+#include "DevelopmentCard.h"
 #include "Piece.h"
+#include "Resource.h"
+#include "SpecialCard.h"
 #include <stdlib.h>
 
 Player* createPlayer(Color color, Resource* resources, unsigned int numResources) {
@@ -27,4 +30,32 @@ Player* createPlayer(Color color, Resource* resources, unsigned int numResources
     for(unsigned int i=0;i<numResources;i++) addResource(player, resources[i]);
 
     return player;
+}
+
+void addResource(Player* player, Resource resource) {
+    player->resources = (Resource*)realloc(player->resources, 
+    sizeof(Resource)*(player->resourcesLen+1));
+    player->resources[player->resourcesLen] = resource;
+    player->resourcesLen++;
+}
+
+void addSpecialCard(Player* player, SpecialCard card) {
+    player->specialCards = (SpecialCard*)realloc(player->specialCards, 
+    sizeof(SpecialCard) * (player->specialCardsLen+1));
+    player->specialCards[player->specialCardsLen] = card;
+    player->specialCardsLen++;
+}
+
+void addDevelopmentCard(Player* player, DevelopmentCard card) {
+    player->developmentCards = (DevelopmentCard*)realloc(player->developmentCards, 
+    sizeof(DevelopmentCard) * (player->developmentCardsLen+1));
+    player->developmentCards[player->developmentCardsLen] = card;
+    player->developmentCardsLen++;
+}
+
+void addAvailablePiece(Player* player, Piece piece) {
+    player->availablePieces = (Piece*)realloc(player->availablePieces, 
+    sizeof(Piece) * (player->availablePiecesLen+1));
+    player->availablePieces[player->availablePiecesLen] = piece;
+    player->availablePiecesLen++;
 }
