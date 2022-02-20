@@ -29,10 +29,13 @@ Player* createPlayer(Color color, Resource* resources, unsigned int numResources
 void addResource(Player* player, Resource resource);
 void addSpecialCard(Player* player, SpecialCard card);
 void addDevelopmentCard(Player* player, DevelopmentCard card);
+void addAvailablePiece(Player* player, Piece piece);
+
+/* discard functions don't check if item exists */
+void discardAvailablePiece(Player* player, Piece piece);
 void discardDevelopmentCard(Player* player, DevelopmentCard card);
 void discardResource(Player* player, Resource resource);
 void discardSpecialCard(Player* player, SpecialCard card);
-void addAvailablePiece(Player* player, Piece piece);
-void discardAvailablePiece(Player* player, Piece piece);
+void destructPlayer(Player* player);
 
 #endif
