@@ -12,12 +12,12 @@ Hexagon* createHexagon(Resource resource, unsigned int number) {
     for(int i=0;i<6;i++) {
         //init side
         hex->sides[i] = (HexSide*)malloc(sizeof(HexSide));
-        hex->sides[i]->port = no_port;
         hex->sides[i]->placement = (Placement*)malloc(sizeof(Placement));
         hex->sides[i]->placement->board_placement = no_piece;
         hex->sides[i]->placement->color = none;
         //init corner
         hex->corners[i] = (HexCorner*)malloc(sizeof(HexCorner));
+        hex->corners[i]->port = no_port;
         hex->corners[i]->placement = (Placement*)malloc(sizeof(Placement));
         hex->corners[i]->placement->board_placement = no_piece;
         hex->corners[i]->placement->color = none;

@@ -16,11 +16,11 @@ typedef enum {
 }Port;
 
 typedef struct {
-    Port port;
     Placement* placement;
 }HexSide;
 
 typedef struct {
+    Port port;
     Placement* placement;
 }HexCorner;
 

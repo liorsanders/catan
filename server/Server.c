@@ -8,8 +8,11 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
+
 
 int main() {
+    srand(time(NULL));
     Placement place;
     place.board_placement = settlement_piece;
     place.color = blue;
@@ -20,4 +23,6 @@ int main() {
     addPlacement(hex, 0, place);
     printf("done\n");
     free(hex);
+
+    return 0;
 }
